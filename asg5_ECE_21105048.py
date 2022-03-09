@@ -34,3 +34,33 @@ submit=Button(root,text="Submit",command=gstrate)                               
 submit.grid(row=4,pady=50)
 
 root.mainloop()
+
+
+
+
+
+
+
+
+
+import calendar
+win=Tk()
+win.title("calendar")
+win.minsize(width=1600,height=800)
+lbl=Label(win,text='Enter YEAR: ')
+lbl.grid(row=0,column=0)
+
+year=Entry(win,textvariable=IntVar())
+year.grid(row=0,column=1)
+
+def Calendar():
+    Year=int(year.get())
+    cal=calendar.calendar(Year,c=10)
+    labl=Label(win,text=cal)
+    labl.grid()
+scrlbar=Scrollbar(win)
+scrlbar.grid(columnspan=10)
+go=Button(win,text="GO!",command=Calendar)
+go.grid(row=2)
+
+win.mainloop()
